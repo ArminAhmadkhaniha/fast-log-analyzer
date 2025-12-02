@@ -28,7 +28,7 @@ func worker(id int, jobs <-chan string, results chan<-Result, wg *sync.WaitGroup
 
 func main(){
 	startTime := time.Now()
-	file, err := os.Open("dummy_logs.txt")
+	file, err := os.Open("dummy_logs_milion.txt")
 	if err != nil{
 		fmt.Println("Error opening file:", err)
 		return

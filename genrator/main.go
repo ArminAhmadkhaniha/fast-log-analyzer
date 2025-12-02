@@ -8,7 +8,7 @@ import (
 )
 
 func main(){
-	file, err := os.Create("dummy_logs.txt")
+	file, err := os.Create("dummy_logs_milion.txt")
 	if err != nil{
 		fmt.Println("Error creating file:", err)
 		return
@@ -16,8 +16,8 @@ func main(){
 	defer file.Close()
 
 	var logLevel string
-
-	for i := 0; i < 1000; i++{
+	const totalRecords = 10000000
+	for i := 0; i < totalRecords; i++{
 		number := rand.Intn(100)
 		if number < 90 {
 			logLevel = "INFO"
